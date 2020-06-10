@@ -7,7 +7,7 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:user) }
-    it { should have_many(:comments).with_foreign_key(:post_id) }
+    it { should belong_to(:user).class_name("User")}
+    it { should have_many(:comments)}
   end
 end
