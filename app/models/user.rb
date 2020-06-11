@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def self.all_friends(user_id)
     User.where('id != ?', user_id)
   end
+
+  def friends
+    sent_requests.map { |friendship| friendship.sender_id if friendship.status == 'accepted' }.compact
+  end
 end

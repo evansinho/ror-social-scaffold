@@ -5,8 +5,9 @@
   <% end %>
   <% @requests.each do |request|%>
     <div class="card pending-item">
+    <%= gravatar_for sender_information(request.sender_id), size: 50 %>
       <div class="grouped-items">
-        <h4><%= sender_information(request.sender_id).first_name %></h4>
+        <h4><%= sender_information(request.sender_id).name %></h4>
       </div>
       <%= link_to accept_request_path(request.sender_id), method: :put do %>
         <i class="fas fa-check"></i>Accept

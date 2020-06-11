@@ -1,6 +1,7 @@
 <section class="users-section">
   <ul class="users-list">
     <% @users.each do |user| %>
+      <%= gravatar_for sender_information(user.id), size: 50 %>
       <li>
         Name: <%= user.name %>
         <span class="profile-link">
@@ -10,7 +11,7 @@
           <button>Pending</button>
         <% elsif request_sent?(user.id) == 'rejected' %>
             <button class="friend_request">
-              <%= link_to 'Add Friend',  send_request_path(user.id), class: 'friend_request' %>
+              <%= link_to 'Invite to friendship',  send_request_path(user.id), class: 'friend_request' %>
             </button>
         <% else %>
           <%= nil %>

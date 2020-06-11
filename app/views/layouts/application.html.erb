@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorSocialScaffold</title>
+    <title>Stay In Touch</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -21,7 +21,12 @@
       </div>
       <% if current_user %>
         <%= link_to received_requests_path do %>
-          <i class="fas fa-user-friends"></i>
+          <i class="fas fa-user-friends" id="notify"></i>
+          <% if pending_requests.positive? %>
+              <p class="pending">
+                <%= pending_requests %>
+              </p>
+          <% end %>
         <% end %> 
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>  
       <% else %>
