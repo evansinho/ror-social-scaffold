@@ -1,0 +1,19 @@
+<div class="container">
+  <p id="danger" class="center center-align green-text"><%= notice %></p>
+  <% if @requests.empty? %>
+    <h3 class="center center-align">No Pending Requests</h3>
+  <% end %>
+  <% @requests.each do |request|%>
+    <div class="card pending-item">
+      <div class="grouped-items">
+        <h4><%= sender_information(request.sender_id).first_name %></h4>
+      </div>
+      <%= link_to accept_request_path(request.sender_id), method: :put do %>
+        <i class="fas fa-check"></i>Accept
+      <% end %>
+      <%= link_to reject_request_path(request.sender_id), method: :delete do %>
+        <i class="fas fa-times"></i>Reject
+      <% end %>
+    </div>
+  <% end %>
+</div>

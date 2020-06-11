@@ -23,6 +23,9 @@ default: &default
 
 development:
   <<: *default
+  # host: 127.0.0.1
+  # username: postgres
+  # password: evansinho
   database: ror_social_scaffold_development
 
   # The specified database role being used to connect to postgres.

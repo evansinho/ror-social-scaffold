@@ -6,6 +6,15 @@
         <span class="profile-link">
           <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
         </span>
+        <% if request_sent?(user.id) == 'pending' %>
+          <button>Pending</button>
+        <% elsif request_sent?(user.id) == 'rejected' %>
+            <button class="friend_request">
+              <%= link_to 'Add Friend',  send_request_path(user.id), class: 'friend_request' %>
+            </button>
+        <% else %>
+          <%= nil %>
+        <% end %>
       </li>
     <% end %>
   </ul>

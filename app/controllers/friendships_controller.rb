@@ -1,12 +1,16 @@
 class FriendshipsController < ApplicationController
   def create
-    @friendship = Friendship.create(sender_id: current_user, receiver_id: params[:friend_id], status: "pending")
+    @friendship = Friendship.new
+    @friendship.sender_id = current_user
+    @friendship.receiver_id = params[:friend_id]
+    @friendship.status = 'pending'
+    @friendship.save
     flash[:notice] = 'Request sent successfully'
     redirect_to users_path
   end
 
   def reject
-    @request = Friendship.where(current_user, params[:sender_id])
+    @request = Friendship.where(current_user, params[:sender_id])[0]
     @request.destroy
     redirect_to received_requests_path
   end

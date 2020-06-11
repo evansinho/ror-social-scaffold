@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :sent_requests, foreign_key: 'sender_id', class_name: 'Friendship'
   has_many :received_requests, foreign_key: 'receiver_id', class_name: 'Friendship'
+
+  def self.all_friends(user_id)
+    User.where('id != ?', user_id)
+  end
 end
