@@ -7,7 +7,7 @@ RSpec.feature 'Posts', type: :feature do
   end
 
   it 'Should create a post' do
-    visit root_path
+    visit new_user_session_path
     fill_in 'session[email]', with: 'user@mail.com'
     fill_in 'session[password]', with: '1234567'
     click_button 'LOG IN'

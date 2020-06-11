@@ -76,6 +76,55 @@ a {
   padding: 16px;
 }
 
+.card {
+  display: flex;
+  height: auto;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(104, 104, 104, 0.8);
+  box-shadow: 3px 3px #888888;
+}
+
+.friend_request {
+  margin-left: auto;
+  padding: 16px;
+  background-color: $primary-color-dark;
+  color: white;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-name h2 {
+  margin: 30px 0 0 20px;
+}
+
+.group-item h4,
+.accept,
+.reject {
+  margin: 20px 0 0 15px;
+}
+
+.accept {
+  color: #ffd700;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.reject {
+  color: red;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+
+
+
 .notice,
 .alert {
   margin-bottom: 8px;
@@ -294,8 +343,10 @@ form {
   }
 
   .profile-link {
-    font-size: 0.8em;
-    margin: 0 0 8px 0;
+    justify-content: center;
+    font-size: 1.2em;
+    bottom: -20px;
+    margin: 15px 0 0px 35px;
     color: $primary-color-dark;
   }
 }
@@ -341,4 +392,5 @@ form {
   .user-section {
     width: 50%;
   }
+
 }

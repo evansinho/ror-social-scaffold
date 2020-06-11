@@ -1,6 +1,10 @@
 <section class="user-section">
-<%= gravatar_for current_user, size: 130 %>
-  <h2><%= "Name: #{@user.name}" %></h2>
+  <div class="profile-name">
+   <%= gravatar_for current_user, size: 100 %> 
+
+    <h2><%= "#{@user.name}" %></h2>
+
+  </div>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
