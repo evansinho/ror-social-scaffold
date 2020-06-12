@@ -23,9 +23,9 @@
         <%= link_to received_requests_path do %>
           <i class="fas fa-user-friends" id="notify"></i>
           <% if pending_requests.positive? %>
-              <p class="pending">
+              <span class="pending">
                 <%= pending_requests %>
-              </p>
+              </span>
           <% end %>
         <% end %> 
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>  

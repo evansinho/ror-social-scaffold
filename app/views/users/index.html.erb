@@ -1,9 +1,7 @@
 <section class="users-section">
   <ul class="users-list">
     <% @users.each do |user| %>
-
      <div class="card">
-
          <%= gravatar_for sender_information(user.id), size: 50 %>
          <span class="profile-link">
            <%= link_to user.name, user_path(user), class: 'profile-link' %>

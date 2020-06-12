@@ -76,6 +76,42 @@ a {
   padding: 16px;
 }
 
+#notify {
+  position: relative;
+}
+
+.pending {
+  position: absolute;
+  top: 5px;
+  right: 9.4%;
+  background-color:#ff0000;
+  padding: 0 2px;
+  border-radius: 5px;
+}
+
+.pending-btn {
+  margin-left: auto;
+  margin-top: 0.8rem;
+}
+
+.reject-btn,
+.accept-btn {
+  border: 1px solid grey;
+  background-color: $primary-color-dark;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+}
+
+.reject-btn {
+  margin-left: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.center-align {
+  text-align: center;
+}
+
 .card {
   display: flex;
   height: auto;
@@ -88,7 +124,7 @@ a {
 
 .friend_request {
   margin-left: auto;
-  padding: 16px;
+  padding: 10px;
   background-color: $primary-color-dark;
   color: white;
   border-radius: 5px;
@@ -98,10 +134,16 @@ a {
 .profile-name {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .profile-name h2 {
   margin: 30px 0 0 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
 }
 
 .group-item h4,
