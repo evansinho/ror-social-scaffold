@@ -8,17 +8,17 @@ RSpec.feature 'Posts', type: :feature do
 
   it 'Should create comment' do
     visit root_path
-    fill_in 'session[email]', with: 'user@mail.com'
-    fill_in 'session[password]', with: '1234567'
-    click_button 'LOG IN'
+    fill_in 'user_email', with: 'user@mail.com'
+    fill_in 'user_password', with: '1234567'
+    click_button 'Log in'
     click_on 'Like!'
     expect(page).to have_content('Dislike!')
   end
 
   it 'Should delete a like from a post' do
     visit root_path
-    fill_in 'session[email]', with: 'user@mail.com'
-    fill_in 'session[password]', with: '1234567'
+    fill_in 'user_email', with: 'user@mail.com'
+    fill_in 'user_password', with: '1234567'
     click_button 'Log in'
     click_on 'Like!'
     expect(page).to have_content('Dislike!')

@@ -8,13 +8,11 @@ RSpec.feature 'Posts', type: :feature do
 
   it 'Should create a post' do
     visit new_user_session_path
-    fill_in 'session[email]', with: 'user@mail.com'
-    fill_in 'session[password]', with: '1234567'
-    click_button 'LOG IN'
+    fill_in 'user_email', with: 'user@mail.com'
+    fill_in 'user_password', with: '1234567'
+    click_button 'Log in'
     fill_in 'post[content]', with: 'This is a post content'
-    click_on 'SAVE'
+    click_on 'Save'
     expect(page).to have_content('This is a post content')
-    expect(page).to have_content('COMMENT')
-    expect(page).to have_content('LIKE')
   end
 end

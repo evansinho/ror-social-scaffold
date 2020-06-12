@@ -8,12 +8,12 @@ RSpec.feature 'Posts', type: :feature do
 
   it 'Should create comment' do
     visit root_path
-    fill_in 'session[email]', with: 'user@mail.com'
-    fill_in 'session[password]', with: '1234567'
-    click_button 'LOG IN'
+    fill_in 'user_email', with: 'user@mail.com'
+    fill_in 'user_password', with: '1234567'
+    click_button 'Log in'
     expect(page).to have_content('User')
     fill_in 'comment[content]', with: 'First comment'
-    click_on 'COMMENT'
+    click_on 'Comment'
     expect(page).to have_content('User')
   end
 end
