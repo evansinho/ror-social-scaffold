@@ -24,5 +24,4 @@ RSpec.feature 'Posts', type: :feature do
     click_on 'Tony'
     expect(page).to have_content('Invite to friendship')
   end
-
 end

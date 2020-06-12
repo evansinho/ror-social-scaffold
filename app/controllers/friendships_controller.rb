@@ -22,5 +22,4 @@ class FriendshipsController < ApplicationController
                       receiver_id: params[:sender_id], status: 'accepted')
     redirect_to received_requests_path
   end
-
 end
