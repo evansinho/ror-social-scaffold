@@ -20,7 +20,6 @@ class FriendshipsController < ApplicationController
   end
 
   private
-  
   def send_request
     @friendship = Friendship.new
     @friendship.sender_id = current_user.id
