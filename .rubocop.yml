@@ -1,12 +1,11 @@
 AllCops:
   Exclude:
-    - "db/**/*"
-    - "bin/*" 
-    - "config/**/*"
+    - "README.md"
     - "Guardfile"
     - "Rakefile"
-    - "README.md"
+    - "bin/**/*"
     - "node_modules/**/*"
+    - "config/**/*"
 
   DisplayCopNames: true
 
@@ -20,7 +19,7 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
-  Max: 30
+  Max: 100
 
 
 Style/Documentation:
